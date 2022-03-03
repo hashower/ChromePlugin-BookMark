@@ -1,0 +1,46 @@
+/* 定义全局通用样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    outline: none !important;
+}
+::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-track{background:#cbd5e0}::-webkit-scrollbar-thumb{background:#718096}::-webkit-scrollbar-thumb:hover{background:#2d3748}
+
+
+
+*{
+    outline: none !important;
+}
+::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-track{background:#cbd5e0}::-webkit-scrollbar-thumb{background:#718096}::-webkit-scrollbar-thumb:hover{background:#2d3748}
+html{
+    scrollbar-color: #718096 #cbd5e0;
+    scrollbar-width: thin;
+}
+
+
+.aside {
+    background: #f4f6fb;
+}
+
+
+.line-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.line-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.line-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

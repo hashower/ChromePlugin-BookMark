@@ -1,0 +1,42 @@
+{
+  "name": "vite-vue3-windicss-chrome-extension-starter",
+  "version": "0.0.0",
+  "keyword": "Chrome, Chrome extension, Vite, Vue, Vue3, Windi CSS",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,vue, js,html",
+      "runOnChangeOnly": false
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && pnpm copy",
+    "watch": "npm-watch",
+    "watchs": "vite build --watch",
+    "serve": "vite preview",
+    "copy": "node ./scripts/copyAssets.js"
+  },
+  "dependencies": {
+    "pinia": "^2.0.11",
+    "rollup-plugin-copy": "^3.4.0",
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.179",
+    "@types/node": "^17.0.21",
+    "@vitejs/plugin-legacy": "^1.6.2",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "autoprefixer": "^10.4.2",
+    "glob": "^7.2.0",
+    "npm-watch": "^0.11.0",
+    "postcss": "^8.4.7",
+    "tailwindcss": "^3.0.23",
+    "vite": "^2.6.4",
+    "vite-plugin-compression": "^0.3.5",
+    "vite-plugin-windicss": "^1.5.1",
+    "windicss": "^3.2.1"
+  }
+}
