@@ -71,7 +71,7 @@
   });
 
 
-  function recursion(element) {
+  const recursion = element =>{
     if (element.children) {
       for (const iterator of element.children) {
         recursion(iterator);

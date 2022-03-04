@@ -1,13 +1,25 @@
 <template>
   <!-- Desktop sidebar -->
-  <aside class="aside flex flex-col h-full fixed left-0 z-40 w-52 overflow-y-auto md:flex flex-shrink-0 transform -translate-x-full lg:-translate-x-0">
+  <aside
+    class="aside flex flex-col h-full fixed left-0 z-40 w-52 overflow-y-auto md:flex flex-shrink-0 transform -translate-x-full lg:-translate-x-0"
+  >
     <div class="flex flex-col w-full py-4 text-gray-500">
-      <a href="#" rel="home" class="mx-8 mt-2 text-2xl	">
-        BOOKMARK</a>
+      <a href="#" rel="home" class="mx-8 mt-2 text-2xl"> BOOKMARK</a>
       <ul class="mt-6">
-
-        <li class="relateive" v-for="(item, i) in tabs" :key="i" @click="getTabChildren(item.id,i)">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 px-6 py-2.5 border-l-4 border-transparent" :class="{textred500:active == i,borderred500:active == i}"><span class="inline-flex items-center"><i class="text-xl sui-shangdian w-5"></i><span class="ml-4">{{ item.title }}</span></span></a>
+        <li
+          class="relateive"
+          v-for="(item, i) in tabs"
+          :key="i"
+          @click="getTabChildren(item.id, i)"
+        >
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 px-6 py-2.5 border-l-4 border-transparent"
+            :class="{ textred500: active == i, borderred500: active == i }"
+            ><span class="inline-flex items-center"
+              ><i class="text-xl sui-shangdian w-5"></i
+              ><span class="ml-4">{{ item.title }}</span></span
+            ></a
+          >
         </li>
       </ul>
     </div>
@@ -22,57 +34,53 @@
 </template>
 
 <script setup>
-  import { useTabStore } from '@/store';
-  import { ref } from 'vue';
-  const active = ref(0)
-  const tabs = ref([]);
-  const store = useTabStore();
-  const base = [{ id: 3, title: "浏览历史" },
-    { id: 2, title: "所有书签" },
-    { id: 1, title: "书签栏" }
-  ]
+import { useTabStore } from '@/store';
+import { ref } from 'vue';
+const active = ref(0);
+const tabs = ref([]);
+const store = useTabStore();
+const base = [
+  { id: 3, title: '浏览历史' },
+  { id: 2, title: '所有书签' },
+  { id: 1, title: '书签栏' },
+];
 
-  chrome.bookmarks.getTree((bookmarkArray) => {
-    const res = bookmarkArray[0].children;
-    const bookmarks = res[0];
+chrome.bookmarks.getTree((bookmarkArray) => {
+  const res = bookmarkArray[0].children;
+  const bookmarks = res[0];
 
-    tabs.value = bookmarks.children.filter(item => item.children);
-    tabs.value.unshift(...base)
+  tabs.value = bookmarks.children.filter((item) => item.children);
+  tabs.value.unshift(...base);
+});
 
-  });
-
-
-
-  const getTabChildren = (id, i) => {
-    active.value = i
-    store.updateTabId(id)
-  };
+const getTabChildren = (id, i) => {
+  active.value = i;
+  store.updateTabId(id);
+};
 </script>
 
 <style>
-  @font-face {
-    font-family: 'Dressedless';
-    src: url('./Dressedless.ttf') format('truetype'),
-  }
+@font-face {
+  font-family: 'Dressedless';
+  src: url('./Dressedless.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: "Dressedless";
-    src: url("./Dressedless.ttf");
-  }
+@font-face {
+  font-family: 'Dressedless';
+  src: url('./Dressedless.ttf');
+}
 
-  aside div>a {
-    font-family: Dressedless;
-  }
+aside div > a {
+  font-family: Dressedless;
+}
 
+.textred500 {
+  --tw-text-opacity: 1;
+  color: rgba(239, 68, 68, var(--tw-text-opacity));
+}
 
-  .textred500 {
-    --tw-text-opacity: 1;
-    color: rgba(239, 68, 68, var(--tw-text-opacity));
-  }
-
-
-  .borderred500 {
-    --tw-border-opacity: 1;
-    border-color: rgba(239, 68, 68, var(--tw-border-opacity));
-  }
+.borderred500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity));
+}
 </style>

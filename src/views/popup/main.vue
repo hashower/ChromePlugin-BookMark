@@ -1,13 +1,9 @@
 <template>
   <div class="w-full min-h-screen">
-    <div class="h-md w-md">
-      <div
-        class="h-full w-full rounded-2xl shadow-xl transform cursor-pointer  bg-yellow-500"
-      >
-        正面
-      </div>
-      <div class="h-full w-full rounded-2xl shadow-xl bg-white">背面</div>
-    </div>
+  
+
+   <a class="block bg-teal hover:bg-teal-dark uppercase text-lg mx-auto p-4 rounded" href="chrome-extension://pejgenoomcjeebhdhdmpjadjkgdiifkk/index.html" target="_blank" >书签管理</a>
+
   </div>
 </template>
 
