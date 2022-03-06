@@ -43,7 +43,7 @@
           <li v-for="(item, i) in subTabs" :key="i" @click="store.updateTabId(id)">
             <a :href="item.url" class="text-base text-grey-600 font-semibold">
               {{
-              item.title
+                item.title
               }}
             </a>
           </li>
@@ -61,12 +61,7 @@ const store = useTabStore();
 const search = ref('')
 
 watchEffect(() => {
-
-  if (search.value.length == 0) {
-    store.updateTabId(987)
-  } else {
-    store.updateSearch(search);
-  }
+  store.updateSearch(search);
 
 })
 </script>
