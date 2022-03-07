@@ -32,11 +32,3 @@ pnpm watch
 |-- main.vue
 ```
 打包工具会自动读取 "./src/views/**/main.ts" 下所有文件，并将该层目录的 main.html 作为输出的入口 HTML 文件。
-
-## 资源分享
-- [Awesome Vite.js](https://github.com/vitejs/awesome-vite)
-- [Vite Rollup Plugins](https://vite-rollup-plugins.patak.dev/)
-- [Chrome Apps Documentation](https://developer.chrome.com/docs/apps/)
-- [webext-bridge](https://github.com/antfu/webext-bridge)
-- [vitesse-webext](https://github.com/antfu/vitesse-webext)
-- [Vitesse](https://github.com/antfu/vitesse)
