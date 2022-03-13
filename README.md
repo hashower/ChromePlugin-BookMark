@@ -11,7 +11,7 @@ npm install
 pnpm install
 ```
 
-### 运行
+## 运行
 ```bash
 // npm
 npm run watch
