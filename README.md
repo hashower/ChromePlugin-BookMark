@@ -1,5 +1,5 @@
 ## vite-vue3-tailwindcss-chrome-extension-starter
-基于 [Vite](https://cn.vitejs.dev/) + [Vue3](https://v3.cn.vuejs.org/) + [Windicss](https://cn.windicss.org/) 开发谷歌插件的 Starter 项目。
+基于 [Vite](https://cn.vitejs.dev/) + [Vue3](https://v3.cn.vuejs.org/) + [Windicss](https://cn.windicss.org/) 开发谷歌插件
 ## 安装
 
 ```bash
